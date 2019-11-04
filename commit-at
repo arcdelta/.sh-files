@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# Commit staged changes at specific date and/or time.
+#
+# Formats are as follows:
+#  - YYYY-mm-dd HH:MM:SS
+#  - 2 days ago, 2 hours ago, 20 minutes ago
+#  - Any RFC 2822 and ISO 8601 compliant date formats
+#
+# Note: `coreutils` package must be installed on macOS (brew install coreutils)
+# and the `gdate` command should yield current date.
+#
+# To make this script global put it inside `/usr/local/bin` and make it
+# executable with `chown +x commit-at`
+
+# TODO: Replace positional args with more flexible approach
+message="$1"
+date="$2"
+
+# Usage docs
+if [[ -z "$message" ]]; then
+  echo "commit-at: You should specify commit message and (optionally) date\n"
+
+  echo "Usage: commit-at [message] [[date]]\n"
+
+  echo "Examples:"
+  echo "\$ commit-at 'Plant a tree' '2 days ago' "
+  echo "\$ commit-at 'Create yet another framework' '1 hour ago' "
+  echo "\$ commit-at 'Raise a kid' '2019-11-11 12:35:18'"
+
+  exit 0
+fi
+
+# If date isn't specified, then use current date and time
+if [[ -z "$date" ]]; then
+  date=$(gdate)
+fi
+
+# Get timestamp to make it a bit more safe
+timestamp=$(gdate -d "$date" +%s)
+
+export GIT_AUTHOR_DATE
+export GIT_COMMITTER_DATE
+
+GIT_AUTHOR_DATE="$timestamp"
+GIT_COMMITTER_DATE="$timestamp"
+
+git commit -m "$message"
