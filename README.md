@@ -1,2 +1,3 @@
 # shcripts
-Useful (and not) bash/zsh scripts
+
+My bash/zsh scripts, shell customisations, hacks, aliases
