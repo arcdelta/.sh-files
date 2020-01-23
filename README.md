@@ -1,6 +1,6 @@
 # shcripts
 
-**Sh**ome ba**sh** junk. Thi**sh**'**sh** mo**sh**tly for my**sh**elf, becau**sh**e I can't remember **sh**i~, and thi**sh**, **sh**omeday, may **sh**ave me a couple of hour**sh**...
+**Sh**ome **sh**ell junk. Thi**sh**'**sh** mo**sh**tly for my**sh**elf, becau**sh**e I can't remember **sh**i~, and thi**sh**, **sh**omeday, may **sh**ave me a couple of hour**sh**...
 
 ## Setup
 
@@ -9,7 +9,7 @@ Someday I'll write a Makefile for doing all this cumbersome work, but for now...
 #### Prerequisites
 
 - This repository cloned somewhere.
-- `zsh`, but I'm pretty sure old good `bash` and `.bash_profile` will do.
+- `zsh`, but I'm pretty sure good old `bash` with its `.bash_profile` will do.
 - The `coreutils` package is required on macOS (`brew install coreutils`).
 
 #### How do I use dem aliases and stuff?
