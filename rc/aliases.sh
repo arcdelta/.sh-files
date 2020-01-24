@@ -19,6 +19,9 @@ alias npm-locals="npm list --depth=0"      # List packages installed locally (cu
 # I had to make these to ease working with git in projects that use commitizen,
 # since it's kind of awkward to work both in a client like Fork and in terminal.
 
+# Commitizen
+alias cz="git-cz"  # -> Run Commitizen CLI
+
 # Repository status
 alias gs="git status"  # -> Status
 
