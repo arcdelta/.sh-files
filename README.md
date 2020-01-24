@@ -8,16 +8,30 @@ Someday I'll write a Makefile for doing all this cumbersome work, but for now...
 
 #### Prerequisites
 
-- This repository cloned somewhere.
-- `zsh`, but I'm pretty sure good old `bash` with its `.bash_profile` will do.
-- The `coreutils` package is required on macOS (`brew install coreutils`).
+- `Zsh`, though good old `bash` with `.bash_profile` will do.
+- The `coreutils` package installed on macOS (`brew install coreutils`).
+- This repository cloned as `.shcripts` to `~`.
 
 #### How do I use dem aliases and stuff?
 
-Simply source `*.sh`s in your `.zshrc`. If you're inside `shcripts` directory, you can do this:
+You can either copy-paste the code below into your `.zshrc`:
 
 ```bash
-$ echo "source `pwd`/rc/*.sh" >> ~/.zshrc
+# Shcripts injection
+export SHCRIPTS="$HOME/.shcripts"
+
+source "$SHCRIPTS/loader.sh"
+include $SHCRIPTS/rc \*
+```
+
+or `echo` it there directly from shell:
+
+```bash
+$ echo '# Shcripts injection
+export SHCRIPTS="$HOME/.shcripts"
+
+source "$SHCRIPTS/loader.sh"
+include $SHCRIPTS/rc \*' >> ~/.zshrc
 ```
 
 **Note**. If you're not sure what one or another alias stands for, you can simply use `which <aliases>`.
