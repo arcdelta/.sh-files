@@ -20,6 +20,14 @@ Simply source `*.sh`s in your `.zshrc`. If you're inside `shcripts` directory, y
 $ echo "source `pwd`/rc/*.sh" >> ~/.zshrc
 ```
 
+> If you're not sure what one or another alias stands for, you can simply you use `which <aliases>`.
+>
+> ```bash
+> $ which gcm gai
+> gai: aliased to git add --interactive
+> gcm: aliased to git commit -m
+> ```
+
 #### Where should I place dem binaries, bruh?
 
 For convenient usage it's advised to place them inside `/usr/local/bin`, `$HOME/bin` or `$HOME/.local/bin`. There's no consensus on this topic, but I'm personally leaning towards the last option. Anyway, don't forget to add the directory of your choice to the `PATH` environment variable (if it's not there already).
