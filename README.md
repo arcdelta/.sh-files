@@ -20,13 +20,13 @@ Simply source `*.sh`s in your `.zshrc`. If you're inside `shcripts` directory, y
 $ echo "source `pwd`/rc/*.sh" >> ~/.zshrc
 ```
 
-> If you're not sure what one or another alias stands for, you can simply use `which <aliases>`.
->
-> ```bash
-> $ which gcm gai
-> gai: aliased to git add --interactive
-> gcm: aliased to git commit -m
-> ```
+**Note**. If you're not sure what one or another alias stands for, you can simply use `which <aliases>`.
+
+```bash
+$ which gcm gai
+gai: aliased to git add --interactive
+gcm: aliased to git commit -m
+```
 
 #### Where should I place dem binaries, bruh?
 
