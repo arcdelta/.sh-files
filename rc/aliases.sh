@@ -46,3 +46,7 @@ alias gcm="git commit -m"  # (Message) -> Commit staged changes/files
 # Switching to branches/commits
 alias gch="git checkout"     # (Branch/Hash) -> Switch to a branch or commit
 alias gcb="git checkout -b"  # (Branch name) -> Create a new branch and switch to it
+
+# Pretty log
+GIT_LOG_FORMAT="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
+alias glg="git log --graph --pretty=format:'$GIT_LOG_FORMAT' --abbrev-commit"
