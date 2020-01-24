@@ -1,4 +1,10 @@
-# Search functions/aliases
-ff () { /usr/bin/find . -name "$@" ; }      # ff: Find file under the current directory
-ffs () { /usr/bin/find . -name "$@"'*' ; }  # ffs: Find file whose name starts with a given string
-ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe: Find file whose name ends with a given string
+## Search functions/aliases
+
+# (Name) -> Find file under the current directory
+function f () { find . -name "$@"; }
+
+# (Prefix) -> Find file which name starts with a given string
+function ffs () { find . -name "$@"'*'; }
+
+# (Suffix) -> Find file which name ends with a given string
+function ffe () { find . -name '*'"$@"; }
