@@ -1,7 +1,7 @@
 # Upward navigation
 alias ~="cd ~"         # Go home
-alias ..='cd ../'      # Go back 1 level up
-alias ...='cd ../../'  # Go back 2 levels up
+alias ..='cd ../'      # Go 1 level up
+alias ...='cd ../../'  # Go 2 levels up
 
 # General aliases
 alias cls="clear"                         # I'm used to Windows way of clearing terminal
