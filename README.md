@@ -1,6 +1,6 @@
-# shcripts
+# .sh-files
 
-**Sh**ome **sh**ell junk. Thi**sh**'**sh** mo**sh**tly for my**sh**elf, becau**sh**e I can't remember **sh**i~, and thi**sh**, **sh**omeday, may **sh**ave me a couple of hour**sh**...
+**Sh**ome **sh**ell junk. Thi**sh**'**sh** for my**sh**elf, becau**sh**e I can't remember **sh**i~, and thi**sh**, **sh**omeday, may **sh**ave me a couple of hour**sh**...
 
 ## Setup
 
@@ -8,30 +8,34 @@ Someday I'll write a Makefile for doing all this cumbersome work, but for now...
 
 #### Prerequisites
 
-- `Zsh`, though good old `bash` with `.bash_profile` will do.
+- `zsh`, though good old `bash` with `.bash_profile` will do.
 - The `coreutils` package installed on macOS (`brew install coreutils`).
-- This repository cloned as `.shcripts` to `~`.
+- This repository cloned as `.sh-files` to `~`:
+
+```bash
+$ cd ~ && git clone https://github.com/arcdelta/.sh-files.git
+```
 
 #### How do I use dem aliases and stuff?
 
 You can either copy-paste the code below into your `.zshrc`:
 
 ```bash
-# Shcripts injection
-export SHCRIPTS="$HOME/.shcripts"
+# Sh-files injection
+export SHFILES="$HOME/.sh-files"
 
-source "$SHCRIPTS/loader.sh"
-include $SHCRIPTS/rc \*
+source "$SHFILES/loader.sh"
+include $SHFILES/rc \*
 ```
 
 or `echo` it there directly from shell:
 
 ```bash
-$ echo '# Shcripts injection
-export SHCRIPTS="$HOME/.shcripts"
+$ echo '# Sh-files injection
+export SHFILES="$HOME/.sh-files"
 
-source "$SHCRIPTS/loader.sh"
-include $SHCRIPTS/rc \*' >> ~/.zshrc
+source "$SHFILES/loader.sh"
+include $SHFILES/rc \*' >> ~/.zshrc
 ```
 
 **Note**. If you're not sure what one or another alias stands for, you can simply use `which <aliases>`.
@@ -48,7 +52,7 @@ For convenient usage it's advised to place them inside `/usr/local/bin`, `$HOME/
 
 #### What do I do to use dis sleek commit hack?
 
-Let's say you decided to go with the `$HOME/.local/bin` option. Quickly check if `$HOME/.local/bin` is already in the `PATH`:
+Let's say you decided to go with the `$HOME/.local/bin` option. Check if `$HOME/.local/bin` is already in the `PATH`:
 
 ```bash
 $ echo $PATH | grep $HOME/.local/bin
@@ -62,7 +66,7 @@ If a string with `$HOME/.local/bin` in it is returned, then you're good to go an
 > $ printf '\n# PATH\nexport PATH="$HOME/.local/bin:$PATH"\n' >> ~/.zshrc
 > ```
 >
-> or use the default editor (if it's not set, it will fallback to `vi`):
+> or use the default editor (if it's not set, it'll fallback to `vi`):
 >
 > ```bash
 > $ "${EDITOR:-vi}" ~/.zshrc
@@ -74,11 +78,11 @@ If a string with `$HOME/.local/bin` in it is returned, then you're good to go an
 > $ code ~/.zshrc
 > ```
 
-Then, hold yourself firmly in the `shcripts` directory:
+Then, hold yourself firmly in the `.sh-files` directory:
 
 ```bash
 $ pwd
-/Users/vm/shcripts
+/Users/vm/.sh-files
 ```
 
 Create a symlink:
