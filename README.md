@@ -88,7 +88,7 @@ $ pwd
 Create a symlink:
 
 ```bash
-$ ln -s `pwd`/bin/commit-at $HOME/.local/bin/fake-the-date
+$ ln -s `pwd`/bin/cm $HOME/.local/bin/fake-the-date
 ```
 
 Make it executable, then source the config or reopen terminal:
@@ -102,12 +102,12 @@ Test it:
 
 ```bash
 $ fake-the-date
-commit-at: You should specify the commit message and (optionally) the date
+cm: You should specify the commit message and (optionally) the date
 
-Usage: commit-at [message] [[date]]
+Usage: cm [message] [[date]]
 
 Examples:
-$ commit-at 'Plant a tree' '2 days ago'
-$ commit-at 'Create yet another framework' '1 hour ago'
-$ commit-at 'Raise a kid' '2019-11-11 12:35:18'
+$ cm 'Plant a tree' '2 days ago'
+$ cm 'Create yet another framework' '1 hour ago'
+$ cm 'Raise a kid' '2019-11-11 12:35:18'
 ```
