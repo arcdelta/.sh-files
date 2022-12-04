@@ -9,34 +9,34 @@
 #
 # Note: `coreutils` package must be installed on macOS (brew install coreutils)
 # and the `gdate` command should yield current date.
-#
-# To make this script global put it inside `/usr/local/bin`, `$HOME/bin` or
-# `$HOME/.local/bin`, and make it executable with `chmod +x commit-at`.
 
-# TODO: Replace positional args with more flexible approach
-message="$1"
-date="$2"
+date="$1"
+subject="$2"
+body="$3"
 
-# Usage docs
-if [[ -z "$message" ]]; then
-  echo "commit-at: You should specify the commit message and (optionally) the date\n"
+# Help
 
-  echo "Usage: commit-at [message] [[date]]\n"
+if [[ -z "$subject" ]]; then
+  echo "cm: You should specify the date, commit subject (message), and (optionally) the body\n"
+
+  echo "Usage: cm [date] [subject] [[body]]\n"
 
   echo "Examples:"
-  echo "\$ commit-at 'Plant a tree' '2 days ago' "
-  echo "\$ commit-at 'Create yet another framework' '1 hour ago' "
-  echo "\$ commit-at 'Raise a kid' '2019-11-11 12:35:18'"
+  echo "\$ cm 'now' 'Plant a tree' "
+  echo "\$ cm '1 hour ago' 'Create yet another framework' 'Really cool framework' "
+  echo "\$ cm '2019-11-11 12:35:18' 'Raise a kid'"
 
   exit 0
 fi
 
 # If date isn't specified, then use current date and time
+
 if [[ -z "$date" ]]; then
   date=$(gdate)
 fi
 
 # Get timestamp to make it a bit more safe
+
 timestamp=$(gdate -d "$date" +%s)
 
 export GIT_AUTHOR_DATE
@@ -45,4 +45,9 @@ export GIT_COMMITTER_DATE
 GIT_AUTHOR_DATE="$timestamp"
 GIT_COMMITTER_DATE="$timestamp"
 
-git commit -m "$message"
+if [[ -z "$body" ]]; then
+  git commit -m "$subject"
+else
+  git commit -m "$subject" -m "$body"
+fi
+
