@@ -3,7 +3,7 @@
 # Define directories.
 DOTFILES_DIR="$HOME/.dotfiles"
 BIN_DIR="$DOTFILES_DIR/bin"
-LOCAL_BIN_DIR="$HOME/.local/bintest"
+LOCAL_BIN_DIR="$HOME/.local/bin"
 
 # Links a file if it doesn't already exist in the target directory. Optionally
 # makes the target file executable.
@@ -32,9 +32,9 @@ link() {
 echo "[Linking zsh files]"
 echo
 
-link "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc.test"
-link "$DOTFILES_DIR/.zshenv" "$HOME/.zshenv.test"
-link "$DOTFILES_DIR/.zprofile" "$HOME/.zprofile.test"
+link "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
+link "$DOTFILES_DIR/.zshenv" "$HOME/.zshenv"
+link "$DOTFILES_DIR/.zprofile" "$HOME/.zprofile"
 
 echo
 
@@ -59,12 +59,10 @@ echo
 
 # ------------------------------------------------------------------------------
 
-echo "[Touching some files]"
+echo "[Touching some files...]"
 echo
 
 touch "$HOME/.hushlogin"
-
-echo
 
 # ------------------------------------------------------------------------------
 
