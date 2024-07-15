@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# Prepares Rust release artifact for homebrew.
+
+name="$1"
+version="$2"
+arch="$3"
+
+if [[ $# -lt 3 ]]; then
+  echo "Usage: rr <name> <version> <arch>"
+
+  exit 1
+fi
+
+artifact="$name-$version-$arch.tar.gz"
+
+# Build using the release profile.
+echo "[Building: $artifact]"
+
+cargo build --release
+
+echo
+
+# Create a tarball.
+echo "[Creating: $artifact]"
+
+mkdir .artifacts
+tar -czf ".artifacts/$artifact" -C target/release "$name"
+
+echo
+
+# Calculate checksum.
+
+echo "[Checksum: $artifact]"
+
+shasum -a 256 ".artifacts/$artifact" > ".artifacts/$artifact.sha256.txt"

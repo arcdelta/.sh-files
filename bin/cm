@@ -50,4 +50,3 @@ if [[ -z "$body" ]]; then
 else
   git commit -m "$subject" -m "$body"
 fi
-
