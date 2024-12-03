@@ -14,6 +14,7 @@ alias date="gdate"                  # -> GNU date
 alias gs="git status" # -> Status
 
 # Pushing/pulling in the current branch
+alias gf="git fetch"                     # -> Fetch
 alias gl="git pull"                      # -> Pull
 alias gp="git push"                      # -> Push
 alias gpf="git push --force"             # -> Push (force, unsafe)
@@ -41,3 +42,6 @@ alias gcb="git checkout -b" # (Branch) -> Create a new branch and switch to it
 # Pretty git log
 GIT_LOG_FORMAT="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
 alias glg="git log --graph --pretty=format:'$GIT_LOG_FORMAT' --abbrev-commit"
+
+# Show all aliases defined in this file
+alias aliases="bat ~/.dotfiles/aliases.sh"

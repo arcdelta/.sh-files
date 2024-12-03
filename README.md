@@ -9,6 +9,7 @@ Configs and dotfiles.
 - `cargo` installed ([rustup](https://rustup.rs))
 - `coreutils` installed (`brew install coreutils`)
 - `fzf` installed (`brew install fzf`)
+- `bat` installed (`brew install bat`)
 
 ## Installation
 
